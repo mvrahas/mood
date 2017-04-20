@@ -22,6 +22,8 @@ int inputArray[20] = {3,2,3,4,3,2,3,4,3,2,3,4,3,2,3,4,3,2,3,4};
 float inputAvg;
 float inputSTD;
 float inputRange;
+float inputMax;
+float inputMin;
 
 void setup() {
   Serial.begin(57600);

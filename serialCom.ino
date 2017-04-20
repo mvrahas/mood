@@ -25,11 +25,36 @@ void serialCom(){
 
 
       // Find descriptive statistics
+      
+      //AVG
       float total=0;
       for(int i=0; i<inputLength; i++){
         total = total + inputArray[i];
       }
       inputAvg = float(total/inputLength);
+
+      //STD
+      total = 0;
+      for(int i=0; i<inputLength; i++){
+        total = total + sq(inputArray[i]-inputAvg);
+      }
+      inputSTD = total/(inputLength-1);
+
+      //Range
+      inputMax = 0;
+      inputMin = 5;
+      inputRange = 0;
+      for(int i=0; i<inputLength; i++){
+        if(inputArray[i] < inputMin){
+          inputMin = inputArray[i];
+        }
+        if(inputArray[i] > inputMax){
+          inputMax = inputArray[i];
+        }
+      }
+      inputRange = inputMax-inputMin;
+      
+      
 
       // printouts
       Serial.println(inputArray[19]);
@@ -52,9 +77,11 @@ void serialCom(){
       Serial.println(inputArray[2]);
       Serial.println(inputArray[1]);
       
-      Serial.println(total);
-      Serial.println(inputLength);
       Serial.println(inputAvg);
+      Serial.println(inputSTD);
+      Serial.println(inputMax);
+      Serial.println(inputMin);
+      Serial.println(inputRange);
     }
   }
 }
