@@ -53,20 +53,20 @@ void serialCom(){
         }
       }
       inputRange = inputMax-inputMin;
-      
+
+
+      // Color manipulation
+      avgPercent = inputAvg/5;
+      gAvg = avgPercent*255;
+      rAvg = (1-avgPercent)*255;
+      r = rAvg;
+      g = gAvg;
+      pulseRange = map(inputSTD,0,6.94,0,127.5);
+      pulseMax = 127.5 + pulseRange;
+      pulseMin = 127.5 - pulseRange;
       
 
       // printouts
-      Serial.println(inputArray[19]);
-      Serial.println(inputArray[18]);
-      Serial.println(inputArray[17]);
-      Serial.println(inputArray[16]);
-      Serial.println(inputArray[15]);
-      Serial.println(inputArray[14]);
-      Serial.println(inputArray[13]);
-      Serial.println(inputArray[12]);
-      Serial.println(inputArray[11]);
-      Serial.println(inputArray[10]);
       Serial.println(inputArray[9]);
       Serial.println(inputArray[8]);
       Serial.println(inputArray[7]);
@@ -76,6 +76,7 @@ void serialCom(){
       Serial.println(inputArray[3]);
       Serial.println(inputArray[2]);
       Serial.println(inputArray[1]);
+      Serial.println(inputArray[0]);
       
       Serial.println(inputAvg);
       Serial.println(inputSTD);

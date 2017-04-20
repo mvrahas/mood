@@ -9,21 +9,31 @@
 #define PIN            3
 
 // Number of pixels on the strip
-#define NUMPIXELS      60
+#define NUMPIXELS      120
 
 // Setup the Adafruit Neopixel while defining the number of pixels and pin.
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
-int delayval = 500; // delay for half a second
-
 //arrays
-int inputLength = 20;
-int inputArray[20] = {3,2,3,4,3,2,3,4,3,2,3,4,3,2,3,4,3,2,3,4};
+int inputLength = 10;
+int inputArray[10] = {3,2,3,4,3,2,3,4,3,2};
 float inputAvg;
 float inputSTD;
 float inputRange;
 float inputMax;
 float inputMin;
+
+//color manipulation
+float avgPercent;
+float rAvg = 127.5;
+float gAvg = 127.5;
+float bAvg = 0;
+float r = 127.5;
+float g = 127.5;
+float b = 0;
+float pulseRange;
+float pulseMax;
+float pulseMin;
 
 void setup() {
   Serial.begin(57600);
