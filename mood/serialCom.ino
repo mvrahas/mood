@@ -62,9 +62,9 @@ void serialCom(){
       r = rAvg;
       g = gAvg;
       pulseRange = map(inputSTD,0,6.94,0,127.5);
-      pulseMax = 127.5 + pulseRange;
-      pulseMin = 127.5 - pulseRange;
-      
+      greenMax = gAvg + pulseRange;
+      redMax = rAvg + pulseRange;
+      wavePixel = 0;
 
       // printouts
       Serial.println(inputArray[9]);

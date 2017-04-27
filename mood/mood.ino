@@ -9,7 +9,7 @@
 #define PIN            3
 
 // Number of pixels on the strip
-#define NUMPIXELS      120
+#define NUMPIXELS      50
 
 // Setup the Adafruit Neopixel while defining the number of pixels and pin.
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
@@ -32,8 +32,12 @@ float r = 127.5;
 float g = 127.5;
 float b = 0;
 float pulseRange;
-float pulseMax;
-float pulseMin;
+float greenMax;
+float redMax;
+float pulseSpeed = 2;
+boolean green = true;
+boolean red = false;
+int wavePixel = 0;
 
 void setup() {
   Serial.begin(57600);
